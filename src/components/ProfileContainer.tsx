@@ -1,7 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
-import profileImage from '../assets/profile.jpg'
 import { roboto, inter } from '@/utils/fonts'
+import SocialNetwork from './SocialNetworkContainer'
+import profileImage from '../assets/profile.jpg'
 
 const ProfileContainer = () => {
     return (
@@ -17,9 +18,10 @@ const ProfileContainer = () => {
                 <h1 className={`${roboto.className} text-xl font-bold`}>
                     Hi, my name is Claudio!
                 </h1>
-                <h2 className={`${inter.className} text-base`}>
+                <h2 className={`${inter.className} text-base mb-5`}>
                     Software Developer
                 </h2>
+                <SocialNetwork></SocialNetwork>
             </div>
         </>
     )
