@@ -2,7 +2,8 @@ import React from 'react'
 import Image from 'next/image'
 import profileImage from '../assets/profile.jpg'
 import { roboto, inter } from '@/utils/fonts'
-export const ProfileContainer = () => {
+
+const ProfileContainer = () => {
     return (
         <>
             <div className="flex w-full h-screen flex-col items-center justify-center">
@@ -23,3 +24,5 @@ export const ProfileContainer = () => {
         </>
     )
 }
+
+export default ProfileContainer
