@@ -1,0 +1,5 @@
+.active {
+    font-weight: bold;
+    font-size: 28px;
+    transition: all 0.2s ease-in;
+}
