@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import { roboto, inter } from '@/utils/fonts'
+import { _roboto, _khula } from '@/utils/fonts'
 import SocialNetwork from './SocialNetworkContainer'
 import profileImage from '../assets/profile.jpg'
 
@@ -15,10 +15,10 @@ const ProfileContainer = () => {
                     alt="ProfileImage"
                     width={200}
                 />
-                <h1 className={`${roboto.className} text-xl font-bold`}>
+                <h1 className={`${_roboto.className} text-xl font-bold mb-1`}>
                     Hi, my name is Claudio!
                 </h1>
-                <h2 className={`${inter.className} text-base mb-5`}>
+                <h2 className={`${_khula.className} text-base mb-5`}>
                     Software Developer
                 </h2>
                 <SocialNetwork></SocialNetwork>
