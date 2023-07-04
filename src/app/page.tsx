@@ -1,5 +1,14 @@
 import Head from 'next/head'
 import ProfileContainer from '@/components/ProfileContainer'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: `Claudio's Page`,
+    description: 'Claudio Coder Profile',
+    icons: {
+        icon: 'images/favicon.ico',
+    },
+}
 
 export default function Home() {
     return (
