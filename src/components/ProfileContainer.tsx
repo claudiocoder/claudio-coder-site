@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import { _roboto, _khula } from '@/utils/fonts'
 import SocialNetwork from './SocialNetworkContainer'
 import profileImage from '../assets/profile.jpg'
