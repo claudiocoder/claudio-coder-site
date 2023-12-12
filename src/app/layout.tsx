@@ -21,7 +21,7 @@ export default function RootLayout({
               <ProfileContainer />
             </div>
             <div className="w-full sm:w-4/5 flex justify-center sm:justify-start">
-              <div>{children}</div>
+              <div className="w-[100%]">{children}</div>
             </div>
           </div>
         </div>

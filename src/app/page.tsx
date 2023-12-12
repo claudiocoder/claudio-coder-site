@@ -23,11 +23,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="">
+      <div>
         <h1 className="mb-8 text-3xl font-black">Blog</h1>
-        {posts.map((post, idx) => (
-          <PostCard key={idx} {...post} />
-        ))}
+        <div className="flex flex-wrap gap-5">
+          {posts.map((post, idx) => (
+            <PostCard key={idx} {...post} />
+          ))}
+        </div>
       </div>
     </>
   )
