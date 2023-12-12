@@ -17,7 +17,7 @@ export default function RootLayout({
       <body className={_roboto.className}>
         <div className="p-5 sm:p-10 h-screen">
           <div className="flex flex-col sm:flex-row column w-full">
-            <div className="w-full sm:w-1/5 flex justify-center">
+            <div className="w-full sm:w-1/5 flex justify-center mb-8">
               <ProfileContainer />
             </div>
             <div className="w-full sm:w-4/5 flex justify-center sm:justify-start">

@@ -24,7 +24,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <h1 className="mb-8 text-3xl font-black">Blog</h1>
+        <h1 className="mb-4 sm:mb-8 text-3xl font-black">Blog</h1>
         <div className="flex flex-wrap gap-5">
           {posts.map((post, idx) => (
             <PostCard key={idx} {...post} />
