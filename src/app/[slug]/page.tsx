@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { format, parseISO } from 'date-fns'
 import Footer from '@/components/Footer'
 import { Mdx } from '@/components/Mdx'
+import metadata from '@/utils/metadata'
 
 type Props = {
   params: {
@@ -10,10 +11,23 @@ type Props = {
   }
 }
 
-async function getDocFromParams({ params }: Props) {
+const getDocFromParams = ({ params }: Props) => {
   const doc = allBlogs.find((doc) => doc.slug === params.slug)
 
   return doc ?? null
+}
+
+export const generateMetadata = async ({ params }: Props) => {
+  const doc = await getDocFromParams({ params })
+  if (!doc) {
+    return {}
+  }
+  return metadata({
+    title: doc.title,
+    description: doc.description,
+    path: `/${doc.slug}`,
+    image: `/${doc.thumbnailUrl}`,
+  })
 }
 
 const BlogPage = async ({ params }: Props) => {
