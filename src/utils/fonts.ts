@@ -1,4 +1,4 @@
-import { Khula, Roboto } from "next/font/google"
+import { Khula, Roboto } from 'next/font/google'
 
 export const _roboto = Roboto({
   weight: ['400', '700'],
@@ -6,7 +6,7 @@ export const _roboto = Roboto({
   variable: '--font-roboto',
 })
 
-export const _khula = Khula ({
+export const _khula = Khula({
   weight: ['400'],
   subsets: ['latin'],
   variable: '--font-inter',
