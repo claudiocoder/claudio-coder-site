@@ -1,19 +1,21 @@
-import { Metadata } from 'next'
-import { allBlogs } from 'contentlayer/generated'
-import { compareDesc } from 'date-fns'
-import Head from 'next/head'
-import PostCard from '@/components/PostCard'
+import { Metadata } from "next";
+import { allBlogs } from "contentlayer/generated";
+import { compareDesc } from "date-fns";
+import Head from "next/head";
+import PostCard from "@/components/PostCard";
 
 export const metadata: Metadata = {
   title: `Claudio's Page`,
-  description: 'Claudio Coder Blog',
+  description: "Claudio Coder Blog",
   icons: {
-    icon: 'images/favicon.ico',
+    icon: "images/favicon.ico",
   },
-}
+};
 
 export default function Home() {
-  const posts = allBlogs.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+  const posts = allBlogs.sort((a, b) =>
+    compareDesc(new Date(a.date), new Date(b.date)),
+  );
 
   return (
     <>
@@ -32,5 +34,5 @@ export default function Home() {
         </div>
       </div>
     </>
-  )
+  );
 }

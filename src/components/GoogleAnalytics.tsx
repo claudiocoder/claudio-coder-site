@@ -1,10 +1,13 @@
-'use client'
-import Script from 'next/script'
+"use client";
+import Script from "next/script";
 
 export default function GoogleAnalytics() {
   return (
     <>
-      <Script async src={`https://www.googletagmanager.com/gtag/js?id=G-9JLBHQ70PM`} />
+      <Script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=G-9JLBHQ70PM`}
+      />
       <Script id="ga-script">
         {`
             window.dataLayer = window.dataLayer || [];
@@ -15,5 +18,5 @@ export default function GoogleAnalytics() {
         `}
       </Script>
     </>
-  )
+  );
 }
