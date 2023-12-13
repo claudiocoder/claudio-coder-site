@@ -1,17 +1,17 @@
-import { _roboto } from '@/utils/fonts'
-import { config } from '@fortawesome/fontawesome-svg-core'
-import '@fortawesome/fontawesome-svg-core/styles.css'
-import '@/styles/globals.css'
-import ProfileContainer from '@/components/ProfileContainer'
-import GoogleAnalytics from '@/components/GoogleAnalytics'
-config.autoAddCss = false
+import { _roboto } from "@/utils/fonts";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import "@/styles/globals.css";
+import ProfileContainer from "@/components/ProfileContainer";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+config.autoAddCss = false;
 
 export default function RootLayout({
   // Layouts must accept a children prop.
   // This will be populated with nested layouts or pages
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="es">
@@ -29,5 +29,5 @@ export default function RootLayout({
         <GoogleAnalytics />
       </body>
     </html>
-  )
+  );
 }
