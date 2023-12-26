@@ -1,22 +1,22 @@
-import { Metadata } from "next";
+import { Metadata } from 'next'
 
 interface MetadataProps {
-  title: string;
-  description: string;
-  path: string;
-  image?: string;
+  title: string
+  description: string
+  path: string
+  image?: string
 }
 
-const webUrl = "https://claudiocoder.me";
+const webUrl = 'https://claudiocoder.me'
 
-const defaultImage = `/profile.jpg`;
+const defaultImage = `/profile.jpg`
 
 export default function metadata(props: MetadataProps): Metadata {
-  const { title, description: desc, path } = props;
+  const { title, description: desc, path } = props
 
-  const description = desc + " | @claudio_coder";
+  const description = desc + ' | @claudio_coder'
 
-  const images = webUrl + defaultImage;
+  const images = webUrl + defaultImage
 
   return {
     title,
@@ -25,15 +25,15 @@ export default function metadata(props: MetadataProps): Metadata {
       title,
       description,
       url: webUrl + path,
-      siteName: "claudiocoder.me",
+      siteName: 'claudiocoder.me',
       images,
-      locale: "es",
+      locale: 'es',
     },
     twitter: {
-      card: "summary_large_image",
+      card: 'summary_large_image',
       title,
       description,
       images,
     },
-  };
+  }
 }
