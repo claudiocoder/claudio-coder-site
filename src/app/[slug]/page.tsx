@@ -4,6 +4,7 @@ import { format, parseISO } from 'date-fns'
 import Footer from '@/components/Footer'
 import { Mdx } from '@/components/Mdx'
 import metadata from '@/utils/metadata'
+import SocialMediaScripts from '@/components/SocialMediaScripts'
 
 type Props = {
   params: {
@@ -48,6 +49,16 @@ const BlogPage = async ({ params }: Props) => {
           {format(parseISO(post.date), 'MMMM dd, yyyy')}
         </time>
         <p className='text-gray-500 italic text-sm'>{post.author}</p>
+
+        <div className='my-2'>
+          <a
+            href='https://twitter.com/share?ref_src=twsrc%5Etfw'
+            className='twitter-share-button'
+            data-show-count='false'
+          >
+            <span>Compartir en X</span>
+          </a>
+        </div>
       </div>
       <div className='sm:pl-[5%] sm:pr-[15%] h-[70vh] mb-4 overflow-auto'>
         <Mdx code={post.body.code} />
@@ -55,6 +66,7 @@ const BlogPage = async ({ params }: Props) => {
       <div className='pt-6 pl-[5%]'>
         <Footer />
       </div>
+      <SocialMediaScripts />
     </div>
   )
 }
