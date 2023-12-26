@@ -1,8 +1,8 @@
 import {
   faGithub,
   faLinkedin,
-  faSquareTwitter,
   faTwitch,
+  faXTwitter,
 } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
@@ -16,8 +16,8 @@ const SocialNetwork = () => {
         legacyBehavior
       >
         <FontAwesomeIcon
-          className='text-3xl text-blue-500 cursor-pointer'
-          icon={faSquareTwitter}
+          className='text-3xl text-black-500 cursor-pointer'
+          icon={faXTwitter}
         />
       </Link>
       <Link
