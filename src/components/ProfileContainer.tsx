@@ -1,19 +1,19 @@
-import React from "react";
-import Image from "next/image";
-import { _roboto, _khula } from "@/utils/fonts";
-import SocialNetwork from "./SocialNetworkContainer";
-import profileImage from "../assets/profile.jpg";
+import React from 'react'
+import Image from 'next/image'
+import { _roboto, _khula } from '@/utils/fonts'
+import SocialNetwork from './SocialNetworkContainer'
+import profileImage from '../assets/profile.jpg'
 
 const ProfileContainer = () => {
   return (
     <>
       <div>
-        <div className="mb-5 flex flex-col items-center">
+        <div className='mb-5 flex flex-col items-center'>
           <Image
-            className="shadow-[0_5px_15px_rgba(0,0,0,0.35)] rounded-full"
+            className='shadow-[0_5px_15px_rgba(0,0,0,0.35)] rounded-full'
             src={profileImage}
-            title="Claudio Coder Profile"
-            alt="ProfileImage"
+            title='Claudio Coder Profile'
+            alt='ProfileImage'
             width={200}
             height={200}
           />
@@ -31,7 +31,7 @@ const ProfileContainer = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default ProfileContainer;
+export default ProfileContainer
