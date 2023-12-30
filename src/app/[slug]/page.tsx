@@ -40,30 +40,32 @@ const BlogPage = async ({ params }: Props) => {
 
   return (
     <div className='flex flex-col my-8 sm:px-[5%]'>
-      <div className='sm:pl-[5%] sm:pr-[15%] mb-4 sm:mb-8'>
-        <h1 className='text-2xl sm:text-4xl font-black'>{post.title}</h1>
-        <time
-          dateTime={post.date}
-          className='my-2 block text-sm w-full text-gray-600 text-left'
-        >
-          {format(parseISO(post.date), 'MMMM dd, yyyy')}
-        </time>
-        <p className='text-gray-500 italic text-sm'>{post.author}</p>
-
-        <div className='my-2'>
-          <a
-            href='https://twitter.com/share?ref_src=twsrc%5Etfw'
-            className='twitter-share-button'
-            data-show-count='false'
+      <div className='mx-4'>
+        <div className='sm:pl-[5%] sm:pr-[15%] mb-4 sm:mb-8'>
+          <h1 className='text-2xl sm:text-4xl font-black'>{post.title}</h1>
+          <time
+            dateTime={post.date}
+            className='my-2 block text-sm w-full text-gray-600 text-left'
           >
-            <span>Compartir en X</span>
-          </a>
+            {format(parseISO(post.date), 'MMMM dd, yyyy')}
+          </time>
+          <p className='text-gray-500 italic text-sm'>{post.author}</p>
+
+          <div className='my-2'>
+            <a
+              href='https://twitter.com/share?ref_src=twsrc%5Etfw'
+              className='twitter-share-button'
+              data-show-count='false'
+            >
+              <span>Compartir en X</span>
+            </a>
+          </div>
+        </div>
+        <div className='sm:pl-[5%] sm:pr-[15%] h-[70vh] mb-4'>
+          <Mdx code={post.body.code} />
         </div>
       </div>
-      <div className='sm:pl-[5%] sm:pr-[15%] h-[70vh] mb-4 overflow-auto'>
-        <Mdx code={post.body.code} />
-      </div>
-      <div className='pt-6 pl-[5%]'>
+      <div className='border-t-2 border-solid py-5 px-4 fixed bg-white w-full bottom-0'>
         <Footer />
       </div>
       <SocialMediaScripts />
