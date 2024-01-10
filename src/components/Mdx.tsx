@@ -42,7 +42,7 @@ export function Mdx({ code }: Props) {
   const Component = useMDXComponent(code)
 
   return (
-    <div className='prose prose-slate flex-1'>
+    <div className='prose prose-slate flex-1 pb-24'>
       <Component components={components} />
     </div>
   )
