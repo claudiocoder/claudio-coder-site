@@ -16,9 +16,9 @@ const PostCard = (post: Blog) => {
           className='rounded-l-lg'
         />
       </div>
-      <div className='flex flex-col items-start px-3'>
+      <div className='flex flex-col items-start justify-between px-3 w-full h-full'>
         <h2
-          className={`${_roboto.className} mb-5 text-base sm:text-xl font-bold w-full text-left`}
+          className={`${_roboto.className} my-5 text-base sm:text-xl font-bold w-full text-left`}
         >
           <Link href={post.slug}>{post.title}</Link>
         </h2>
