@@ -18,9 +18,9 @@ export default function Home() {
 
   return (
     <>
-      <div className='sm:m-8 mx-4'>
+      <div className='sm:m-8 mx-4 my-2'>
         <h1 className='mb-6 sm:mb-8 text-3xl font-black'>Blog</h1>
-        <div className='flex flex-wrap gap-5'>
+        <div className='flex flex-wrap gap-5 m-auto'>
           {posts.map((post, idx) => (
             <PostCard key={idx} {...post} />
           ))}
