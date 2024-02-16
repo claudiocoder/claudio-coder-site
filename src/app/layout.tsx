@@ -16,12 +16,12 @@ export default function RootLayout({
   return (
     <html lang='es'>
       <body className={_roboto.className}>
-        <div className='my-4 sm:p-5 sm:pl-5 h-screen'>
-          <div className='flex flex-col sm:flex-row column w-full'>
-            <div className='w-full sm:w-1/5 flex justify-center mb-8'>
+        <div className='my-4 lg:p-5 lg:pl-5 h-screen'>
+          <div className='flex flex-col lg:flex-row column w-full'>
+            <div className='w-full lg:w-1/5 flex justify-center mb-4'>
               <ProfileContainer />
             </div>
-            <div className='w-full sm:w-4/5 flex justify-center sm:justify-start'>
+            <div className='w-full lg:w-4/5 flex justify-center lg:justify-start'>
               <div className='w-[100%]'>{children}</div>
             </div>
           </div>
