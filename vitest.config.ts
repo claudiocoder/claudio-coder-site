@@ -26,6 +26,7 @@ export default defineConfig({
         'vitest.config.ts',
         '**/*.config.*',
         'src/utils',
+        '__mocks__',
         ...coverageConfigDefaults.exclude,
       ],
     },
