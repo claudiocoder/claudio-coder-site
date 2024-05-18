@@ -4,12 +4,19 @@ import React from 'react'
 import Layout from '../src/app/layout'
 
 describe('Layout', () => {
-  it('should render the layout', () => {
+  it('should render layout', () => {
+    const component = render(<Layout>
+      <h1>Layout Testing</h1>
+    </Layout>)
+    expect(component).toBeDefined()
+  })
+
+  it('should render child element', () => {
     render(
       <Layout>
         <h1>Layout Testing</h1>
       </Layout>
     )
-    expect(screen.getByText('Layout Testing')).toBeTruthy()
+    expect(screen.getByText('Layout Testing')).toBeDefined()
   })
 })
