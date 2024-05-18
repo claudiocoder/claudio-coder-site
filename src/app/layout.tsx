@@ -14,8 +14,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang='es'>
-      <body className={_roboto.className}>
+    <div>
+      <div className={_roboto.className}>
         <div className='my-4 lg:p-5 lg:pl-5 h-screen'>
           <div className='flex flex-col lg:flex-row column w-full'>
             <div className='w-full lg:w-1/5 flex justify-center mb-4'>
@@ -27,7 +27,7 @@ export default function RootLayout({
           </div>
         </div>
         <GoogleAnalytics />
-      </body>
-    </html>
+      </div>
+    </div>
   )
 }
