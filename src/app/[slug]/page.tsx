@@ -33,7 +33,6 @@ export const generateMetadata = async ({ params }: Props) => {
 
 const BlogPage = async ({ params }: Props) => {
   const post = await getDocFromParams({ params })
-
   if (!post) {
     notFound()
   }

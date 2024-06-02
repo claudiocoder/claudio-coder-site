@@ -13,7 +13,9 @@ export default defineConfig({
       },
       {
         find: 'contentlayer/generated',
-        replacement: fileURLToPath(new URL('.contentlayer/generated', import.meta.url)),
+        replacement: fileURLToPath(
+          new URL('.contentlayer/generated', import.meta.url)
+        ),
       }
     ],
   },
