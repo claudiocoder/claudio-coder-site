@@ -5,9 +5,11 @@ import Layout from '../../src/app/layout'
 
 describe('Layout', () => {
   it('should render layout', () => {
-    const component = render(<Layout>
-      <h1>Layout Testing</h1>
-    </Layout>)
+    const component = render(
+      <Layout>
+        <h1>Layout Testing</h1>
+      </Layout>
+    )
     expect(component).toBeDefined()
   })
 

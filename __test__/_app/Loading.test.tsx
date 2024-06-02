@@ -1,5 +1,5 @@
 import { expect, it, describe } from 'vitest'
-import { render, screen } from "@testing-library/react"
+import { render, screen } from '@testing-library/react'
 import Loading from '../../src/app/loading'
 
 describe('Loading', () => {
