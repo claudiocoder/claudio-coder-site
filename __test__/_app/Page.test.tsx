@@ -1,4 +1,4 @@
-import { describe, expect, it} from 'vitest'
+import { describe, expect, it } from 'vitest'
 import Page from '../../src/app/page'
 import { render, screen } from '@testing-library/react'
 
@@ -8,7 +8,6 @@ describe('Page', () => {
     expect(component).toBeDefined()
   })
   it('should render blog title', () => {
-    
     render(<Page />)
     expect(screen.getByText('Blog')).toBeDefined()
   })
