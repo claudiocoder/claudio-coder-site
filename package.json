@@ -10,7 +10,7 @@
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "test": "vitest",
-    "test:coverage": "vitest --coverage"
+    "test:coverage": "vitest --coverage.enabled true"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
