@@ -31,4 +31,7 @@ jobs:
         run: npm run format
 
       - name: Unit Test
-        run: npm run test:coverage
+        run: npm run test --coverage.enabled true
+
+      - name: 'Report Coverage'
+        uses: davelosert/vitest-coverage-report-action@v2

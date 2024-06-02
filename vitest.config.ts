@@ -24,6 +24,7 @@ export default defineConfig({
     environment: 'jsdom',
     coverage: {
       provider: 'v8',
+      reporter: ['text', 'json-summary', 'json'],
       exclude: [
         'vitest.config.ts',
         '**/*.config.*',
@@ -31,6 +32,12 @@ export default defineConfig({
         '__mocks__',
         ...coverageConfigDefaults.exclude,
       ],
+      thresholds: {
+        lines: 80,
+        branches: 80,
+        functions: 80,
+        statements: 80,
+      },
     },
     setupFiles: ['vitest.setup.ts'],
     watch: false,
