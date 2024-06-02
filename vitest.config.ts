@@ -24,7 +24,7 @@ export default defineConfig({
     environment: 'jsdom',
     coverage: {
       provider: 'v8',
-      reporter: ['text', 'json-summary', 'json'],
+      reporter: ['text', 'html', 'clover', 'json-summary', 'json'],
       exclude: [
         'vitest.config.ts',
         '**/*.config.*',
