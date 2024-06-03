@@ -2,12 +2,12 @@
   <h1>🖥️ - Claudio Coder Blog - 📱</h1>
 </div>
 
+![landing](./resources/LandingHomePage.png)
+
 <img width=90 alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/claudiocoder/claudio_coder_page/ui.yml?branch=main"> 
 <img width=110 alt="Vercel Deployment" src="https://deploy-badge.vercel.app/vercel/claudio-coder-page-9jtcve6fo-claudiocoders-projects?style=plastic&name=UI">
 
 <div>
-
-![landing](./resources/LandingHomePage.png)
 
 ## Description
 Claudio Coder Personal Blog is a personal blog platform where I share my thoughts, experiences, and knowledge about coding, technology, and software development. This project aims to provide insightful content for developers of all levels, offering tutorials, code snippets, and articles on various tech topics.
