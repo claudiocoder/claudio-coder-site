@@ -1,4 +1,6 @@
-# Claudio Coder Personal Blog
+<div align="center">
+  <h1>🖥️ - Claudio Coder Blog - 📱</h1>
+</div>
 
 ![landing](./resources/LandingHomePage.png)
 
