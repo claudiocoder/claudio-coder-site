@@ -1,10 +1,9 @@
 <div align="center">
-  <h1>Claudio Coder Blog</h1>
+  <h1>🖥️ - Claudio Coder Blog - 📱</h1>
 </div>
 
-<img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/claudiocoder/claudio_coder_page/ui.yml?branch=main"> 
-
-<img alt="Vercel Deployment" src="https://deploy-badge.vercel.app/vercel/claudio-coder-page-9jtcve6fo-claudiocoders-projects?style=plastic&name=UI">
+<img width=90 alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/claudiocoder/claudio_coder_page/ui.yml?branch=main"> 
+<img width=110 alt="Vercel Deployment" src="https://deploy-badge.vercel.app/vercel/claudio-coder-page-9jtcve6fo-claudiocoders-projects?style=plastic&name=UI">
 
 <div>
 
