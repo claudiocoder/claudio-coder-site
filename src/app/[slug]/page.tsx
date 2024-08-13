@@ -4,17 +4,16 @@ import Footer from '@/components/Footer'
 import SocialMediaScripts from '@/components/SocialMediaScripts'
 import { getPostBySlug } from '@/lib/mdx'
 
-type BlogPageParams = {
+interface BlogPageProps {
   slug: string
 }
-
 const getPageContent = async (slug: string) => {
   const { meta, content } = await getPostBySlug(slug)
   return { meta, content }
 }
 
-const BlogPage = async (params: BlogPageParams) => {
-  const { content, meta } = await getPageContent(params.slug)
+const BlogPage = async ({ params }: { params: BlogPageProps }) => {
+  const { content, meta } = await getPageContent(params.slug as string)
 
   if (!meta) {
     return notFound()
@@ -43,7 +42,11 @@ const BlogPage = async (params: BlogPageParams) => {
             </a>
           </div>
         </div>
-        <div className='sm:pl-[5%] sm:pr-[15%] h-[70vh] mb-4'>{content}</div>
+        <div className='sm:pl-[5%] sm:pr-[15%] mb-[10%]'>
+          <div>
+            {content}
+          </div>
+        </div>
       </div>
       <div className='border-t-2 border-solid py-5 px-4 fixed bg-white w-full bottom-0'>
         <Footer />
