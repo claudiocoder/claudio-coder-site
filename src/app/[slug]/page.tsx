@@ -1,54 +1,36 @@
-import { allBlogs } from 'contentlayer/generated'
 import { notFound } from 'next/navigation'
 import { format, parseISO } from 'date-fns'
 import Footer from '@/components/Footer'
-import { Mdx } from '@/components/Mdx'
-import metadata from '@/utils/metadata'
 import SocialMediaScripts from '@/components/SocialMediaScripts'
+import { getPostBySlug } from '@/lib/mdx'
 
-type Props = {
-  params: {
-    slug: string
-  }
+interface BlogPageProps {
+  slug: string
+}
+const getPageContent = async (slug: string) => {
+  const { meta, content } = await getPostBySlug(slug)
+  return { meta, content }
 }
 
-const getDocFromParams = ({ params }: Props) => {
-  const doc = allBlogs.find(doc => doc.slug === params.slug)
+const BlogPage = async ({ params }: { params: BlogPageProps }) => {
+  const { content, meta } = await getPageContent(params.slug as string)
 
-  return doc ?? null
-}
-
-export const generateMetadata = async ({ params }: Props) => {
-  const doc = await getDocFromParams({ params })
-  if (!doc) {
-    return {}
-  }
-  return metadata({
-    title: doc.title,
-    description: doc.description,
-    path: `/${doc.slug}`,
-    image: `/${doc.thumbnailUrl}`,
-  })
-}
-
-const BlogPage = async ({ params }: Props) => {
-  const post = await getDocFromParams({ params })
-  if (!post) {
-    notFound()
+  if (!meta) {
+    return notFound()
   }
 
   return (
     <div className='flex flex-col my-8 sm:px-[5%]'>
       <div className='mx-4'>
         <div className='sm:pl-[5%] sm:pr-[15%] mb-4 sm:mb-8'>
-          <h1 className='text-2xl sm:text-4xl font-black'>{post.title}</h1>
+          <h1 className='text-2xl sm:text-4xl font-black'>{meta.title}</h1>
           <time
-            dateTime={post.date}
+            dateTime={meta.date}
             className='my-2 block text-sm w-full text-gray-600 text-left'
           >
-            {format(parseISO(post.date), 'MMMM dd, yyyy')}
+            {format(parseISO(meta.date), 'MMMM dd, yyyy')}
           </time>
-          <p className='text-gray-500 italic text-sm'>{post.author}</p>
+          <p className='text-gray-500 italic text-sm'>{meta.author}</p>
 
           <div className='my-2'>
             <a
@@ -60,8 +42,8 @@ const BlogPage = async ({ params }: Props) => {
             </a>
           </div>
         </div>
-        <div className='sm:pl-[5%] sm:pr-[15%] h-[70vh] mb-4'>
-          <Mdx code={post.body.code} />
+        <div className='sm:pl-[5%] sm:pr-[15%] mb-[10%]'>
+          <div>{content}</div>
         </div>
       </div>
       <div className='border-t-2 border-solid py-5 px-4 fixed bg-white w-full bottom-0'>

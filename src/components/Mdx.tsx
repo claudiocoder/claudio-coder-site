@@ -1,10 +1,6 @@
-import { useMDXComponent } from 'next-contentlayer/hooks'
 import Image from 'next/image'
-interface Props {
-  code: string
-}
 
-const components = {
+export const MDXComponents = {
   a: ({ ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
     <a
       target='_blank'
@@ -36,14 +32,4 @@ const components = {
       />
     )
   },
-}
-
-export function Mdx({ code }: Props) {
-  const Component = useMDXComponent(code)
-
-  return (
-    <div className='prose prose-slate flex-1 pb-24'>
-      <Component components={components} />
-    </div>
-  )
 }

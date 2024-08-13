@@ -1,4 +1,4 @@
-import { _roboto } from '@/utils/fonts'
+import { _roboto } from '@/lib/utils/fonts'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import '@/styles/globals.css'
