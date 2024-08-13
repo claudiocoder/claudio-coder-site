@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Blog } from 'contentlayer/generated'
 import { format, parseISO } from 'date-fns'
-import { _roboto } from '@/utils/fonts'
+import { _roboto } from '@/lib/utils/fonts'
+import { Blog } from '@/lib/models/Blog'
 
 const PostCard = (post: Blog) => {
   return (
@@ -11,8 +11,8 @@ const PostCard = (post: Blog) => {
         <Image
           width={180}
           height={150}
-          src={post.thumbnailUrl}
-          alt={post.title}
+          src={post.thumbnailUrl as string}
+          alt={post.title as string}
           className='rounded-l-lg'
         />
       </div>
@@ -20,13 +20,13 @@ const PostCard = (post: Blog) => {
         <h2
           className={`${_roboto.className} my-5 text-base sm:text-xl font-bold w-full text-left`}
         >
-          <Link href={post.slug}>{post.title}</Link>
+          <Link href={post.slug as string}>{post.title as string}</Link>
         </h2>
         <time
-          dateTime={post.date}
+          dateTime={post.date as string}
           className='mb-2 block text-xs w-full text-gray-600 text-right'
         >
-          {format(parseISO(post.date), 'MMMM dd, yyyy')}
+          {format(parseISO(post.date as string), 'MMMM dd, yyyy')}
         </time>
       </div>
     </div>

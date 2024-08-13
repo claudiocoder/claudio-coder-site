@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
-import { allBlogs } from 'contentlayer/generated'
-import { compareDesc } from 'date-fns'
 import PostCard from '@/components/PostCard'
+import { getAllPostsMeta } from '@/lib/mdx'
 
 export const metadata: Metadata = {
   title: `Claudio's Page`,
@@ -11,11 +10,8 @@ export const metadata: Metadata = {
   },
 }
 
-export default function Home() {
-  const posts = allBlogs.sort((a, b) =>
-    compareDesc(new Date(a.date), new Date(b.date))
-  )
-
+const Home = async () => {
+  const posts = await getAllPostsMeta()
   return (
     <>
       <div className='sm:m-8 mx-4 my-2'>
@@ -29,3 +25,5 @@ export default function Home() {
     </>
   )
 }
+
+export default Home
