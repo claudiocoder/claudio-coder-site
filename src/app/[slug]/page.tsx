@@ -43,9 +43,7 @@ const BlogPage = async ({ params }: { params: BlogPageProps }) => {
           </div>
         </div>
         <div className='sm:pl-[5%] sm:pr-[15%] mb-[10%]'>
-          <div>
-            {content}
-          </div>
+          <div>{content}</div>
         </div>
       </div>
       <div className='border-t-2 border-solid py-5 px-4 fixed bg-white w-full bottom-0'>

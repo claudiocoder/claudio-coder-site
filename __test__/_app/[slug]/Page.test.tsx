@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import BlogPage  from '../../../src/app/[slug]/page'
+import BlogPage from '../../../src/app/[slug]/page'
 import { render } from '@testing-library/react'
 
 describe('PageSlug', () => {
