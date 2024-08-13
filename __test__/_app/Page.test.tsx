@@ -1,14 +1,15 @@
 import { describe, expect, it } from 'vitest'
-import Page from '../../src/app/page'
+import Home from '../../src/app/page'
 import { render, screen } from '@testing-library/react'
 
 describe('Page', () => {
-  it('should render', () => {
-    const component = render(<Page />)
-    expect(component).toBeDefined()
+  it('should render', async () => {
+    const jsx = await Home()
+    expect(jsx).toBeDefined()
   })
-  it('should render blog title', () => {
-    render(<Page />)
+  it('should render blog title', async () => {
+    const jsx = await Home()
+    render(jsx)
     expect(screen.getByText('Blog')).toBeDefined()
   })
 })
