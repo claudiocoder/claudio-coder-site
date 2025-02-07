@@ -3,6 +3,7 @@ import { format, parseISO } from 'date-fns'
 import Footer from '@/components/Footer'
 import SocialMediaScripts from '@/components/SocialMediaScripts'
 import { getPostBySlug } from '@/lib/mdx'
+import Link from 'next/link'
 
 interface BlogPageProps {
   slug: string
@@ -12,8 +13,9 @@ const getPageContent = async (slug: string) => {
   return { meta, content }
 }
 
-const BlogPage = async ({ params }: { params: BlogPageProps }) => {
-  const { content, meta } = await getPageContent(params.slug as string)
+const BlogPage = async ({ params }: { params: Promise<BlogPageProps> }) => {
+  const { slug } = await params
+  const { content, meta } = await getPageContent(slug as string)
 
   if (!meta) {
     return notFound()
@@ -33,13 +35,13 @@ const BlogPage = async ({ params }: { params: BlogPageProps }) => {
           <p className='text-gray-500 italic text-sm'>{meta.author}</p>
 
           <div className='my-2'>
-            <a
+            <Link
               href='https://twitter.com/share?ref_src=twsrc%5Etfw'
               className='twitter-share-button'
               data-show-count='false'
             >
               <span>Compartir en X</span>
-            </a>
+            </Link>
           </div>
         </div>
         <div className='sm:pl-[5%] sm:pr-[15%] mb-[10%]'>
