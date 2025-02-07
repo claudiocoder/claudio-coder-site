@@ -12,7 +12,8 @@ const getPageContent = async (slug: string) => {
   return { meta, content }
 }
 
-const BlogPage = async ({ params }: { params: BlogPageProps }) => {
+const BlogPage = async (props: { params: Promise<BlogPageProps> }) => {
+  const params = await props.params;
   const { content, meta } = await getPageContent(params.slug as string)
 
   if (!meta) {
