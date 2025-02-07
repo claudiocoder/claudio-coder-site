@@ -23,7 +23,7 @@ export const getPostBySlug = async (slug: string) => {
 export const getAllPostsMeta = async () => {
   const files = fs.readdirSync(rootDirectory)
 
-  let posts = []
+  const posts = []
 
   for (const file of files) {
     const { meta } = await getPostBySlug(file)

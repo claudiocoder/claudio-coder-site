@@ -1,8 +1,10 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export const MDXComponents = {
-  a: ({ ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
-    <a
+  a: ({ ...props }) => (
+    <Link
+      href={props.href}
       target='_blank'
       rel='noopener'
       {...props}
