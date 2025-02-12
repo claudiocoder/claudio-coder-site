@@ -1,5 +1,5 @@
 import { expect, it, describe } from 'vitest'
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import Loading from '../../src/app/loading'
 
 describe('Loading', () => {
@@ -8,7 +8,7 @@ describe('Loading', () => {
     expect(component).toBeDefined()
   })
   it('should display loading label', () => {
-    render(<Loading />)
-    expect(screen.getByText('Loading...')).toBeTruthy()
+    const { container } = render(<Loading />)
+    expect(container.getElementsByClassName('loader').length).toBe(1)
   })
 })
