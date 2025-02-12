@@ -4,6 +4,7 @@ import Footer from '@/components/Footer'
 import SocialMediaScripts from '@/components/SocialMediaScripts'
 import { getPostBySlug } from '@/lib/mdx'
 import Link from 'next/link'
+import 'highlight.js/styles/atom-one-dark.css'
 
 interface BlogPageProps {
   slug: string

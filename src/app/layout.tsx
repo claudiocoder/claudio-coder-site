@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html>
+    <html lang='es'>
       <body className={_roboto.className}>
         <div className='my-4 lg:p-5 lg:pl-5 h-screen'>
           <div className='flex flex-col lg:flex-row column w-full'>
