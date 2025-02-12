@@ -1,0 +1,116 @@
+---
+title: ¿Cuándo usar merge y cuando usar rebase?
+date: 2025-02-10
+description: Git Merge vs Git Rebase
+thumbnailUrl: /blog/git.webp  
+author: claudio_coder
+---
+
+# Git Merge
+
+<br/>
+Recuerdo mi primera entrevista de trabajo como ingeniero de software. Después de responder correctamente preguntas sobre Git, 
+como crear un repositorio, hacer un commit, un push y un pull, el entrevistador me lanzó una pregunta clave:
+<div>
+<span className="font-bold text-lg">"¿Cómo pasas tus cambios de tu rama de desarrollo a la rama principal o viceversa?"</span>
+</div>
+Mi respuesta fue un rotundo: <span className="font-bold text-lg">"No lo sé". </span>
+La solución era mucho más sencilla de lo que imaginaba, 
+solo tenía que responder <span className="font-bold text-lg">git merge</span>.
+Diez años después, sigo utilizando <span className="font-bold">git merge</span>, pero con el tiempo eh aprendido que no es la única forma de integrar cambios entre ramas. Existe otra herramienta poderosa <span className="font-bold text-lg">git rebase</span>.
+<br/>
+
+<span className="font-bold text-lg">¿Cuando usar merge y cuando usar rebase? Veamos un ejemplo práctico.</span>
+<br/><br/>
+
+> Práctica Git Merge
+
+<br/>
+```bash
+# 1. Crea un directorio llamado git-merge y entra a él.
+mkdir git-merge
+cd git-merge
+# 2. Inicializa un repositorio de git.
+git init
+# Hacemos nuestro primer cambio en file.txt, agregamndos un texto.
+echo "File 1" >> fileOne.txt
+# Hacemos nuestro primer commit.
+git add .
+git commit -m "File 1"
+```
+<br/>
+Imaginemos que ahora debemos comenzar a desarrollar una nueva funcionalidad, por lo que creamos una rama llamada feature.
+<br/>
+
+```bash
+# Creamos una rama llamada feature.
+git checkout -b feature
+# Hacemos un cambio en file.txt.
+echo "File 2" >> fileTwo.txt
+# Hacemos un commit.
+git add .
+git commit -m "File 2"
+```
+<br/>
+Mientras trabajábamos alguien más hizo un cambio en la rama principal (master) y ese cambio me interesa tenerlo en mi rama feature.
+<br/>
+
+```bash
+# Cambiamos a la rama master.
+git checkout master
+# Hacemos un cambio en file.txt.
+echo "File 3" >> fileThree.txt
+# Hacemos un commit.
+git add .
+git commit -m "File 3"
+```
+<br/>
+Para incorporar los cambios de la rama master a la rama feature, utilizamos git merge.
+<br/>
+
+```bash
+# Cambiamos a la rama feature.
+git checkout feature
+# Pasamos los cambios de la rama master a la rama feature.
+git merge master
+```
+<br/>
+Nos saldrá un mensaje indicando que debemos crear un commit de <span className="italic">merge</span>, para ello solo debemos guardar y cerrar el editor.
+<br/>
+```bash
+# Vea el historial de commits.
+git log --oneline
+```
+<br/>
+![](/blog/gitmergeterminal.png 'git merge terminal')
+<br/>
+Todo funcionó perfectamente, ahora tengo en mi rama feature los cambios de la rama <span className="italic">master</span>. Sin embargo, si observamos el historial de <span className="italic">commits</span>, veremos que se ha creado un commit de <span className="italic">merge</span>. Esto puede ser molesto, pues por cada cambio que necesite de <span className="italic">master</span>, irá creando un <span className="italic">commit</span> innecesario en mi historial. ¿Cómo puedo evitar esto? La respuesta es <span className="font-bold">git rebase</span>.
+<br/><br/>
+# Git Rebase
+<br/>
+Repitamos los mismos pasos que seguimos con git merge, pero ahora con git rebase.
+<br/>
+```bash
+# Cambiamos a la rama feature.
+git checkout feature
+# Pasamos los cambios de la rama master a la rama feature.
+git rebase master
+# Successfully rebased and updated refs/heads/feature.
+```
+<br/>
+Historial de git
+<br/>
+```bash
+# Vea el historial de commits.
+git log --oneline
+```
+<br/>
+![](/blog/gitrebaseterminal.png 'git merge terminal')
+<br/>
+# Conclusión
+<br/>
+1. 1 - Ambos comandos tienen el mismo objetivo: pasar cambios de una rama a otra.
+
+2. 2 - Debemos usar git merge cuando queremos pasar cambios de una rama privada a una rama pública (master o develop). Esto nos ayudara a mantener historial de cuando fueron integrados los cambios en la rama principal.
+
+3. 3 - Usemos git rebase cuando queremos pasar cambios de una rama pública a una rama privada (feature). Esto nos ayudara a mantener un historial lineaR y ordenado.
