@@ -8,7 +8,6 @@ import rehypeHighlight from 'rehype-highlight'
 const rootDirectory = path.join(process.cwd(), 'src', 'content', 'blog')
 export const getPostBySlug = async (slug: string) => {
   const realSlug = slug.replace(/\.mdx$/, '')
-  console.log('realSlug', realSlug)
   const filePath = path.join(rootDirectory, `${realSlug}.mdx`)
 
   const fileContent = fs.readFileSync(filePath, { encoding: 'utf8' })
