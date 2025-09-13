@@ -14,7 +14,7 @@
     "format:fix": "prettier --write .",
     "test": "vitest",
     "test:coverage": "vitest --coverage.enabled true",
-    "prepare": "husky install",
+    "prepare": "husky",
     "pre-push": "npm run lint && npm run format"
   },
   "lint-staged": {
