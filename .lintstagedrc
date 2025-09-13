@@ -1,9 +1,9 @@
 {
   "*.{js,jsx,ts,tsx}": [
-    "next lint --fix",
-    "prettier --write"
+    "npm run lint",
+    "npm run format:fix"
   ],
   "*.{json,md,mdx,css,html}": [
-    "prettier --write"
+    "npm run format:fix"
   ]
 }
