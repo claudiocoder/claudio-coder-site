@@ -14,7 +14,8 @@
     "format:fix": "prettier --write .",
     "test": "vitest",
     "test:coverage": "vitest --coverage.enabled true",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pre-push": "npm run lint && npm run format"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
