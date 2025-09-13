@@ -22,7 +22,7 @@
       "prettier --write"
     ],
     "*.{js,jsx,ts,tsx}": [
-      "eslint --fix"
+      "npm run lint"
     ]
   },
   "dependencies": {
