@@ -1,9 +1,9 @@
 {
   "*.{js,jsx,ts,tsx}": [
-    "npm run lint",
-    "npm run format:fix"
+    "eslint --fix",
+    "prettier --write"
   ],
-  "*.{json,md,mdx,css,html}": [
-    "npm run format:fix"
+  "*.{css,scss,md}": [
+    "prettier --write"
   ]
 }
