@@ -7,7 +7,7 @@ import { heightCard, widthCard } from '@/constants'
 
 const PostCard = (post: Blog) => {
   return (
-    <Link href={post.slug as string}>
+    <Link href={post.slug as string} aria-label={`Read article: ${post.title}`}>
       <div className='flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg my-6 w-80 lg:w-96'>
         <div className='m-2.5 overflow-hidden rounded-md flex justify-center items-center'>
           <Image
@@ -18,15 +18,15 @@ const PostCard = (post: Blog) => {
             alt={post.title as string}
           />
         </div>
-        <div className='p-6 text-left'>
+        <div className='p-6 flex flex-col justify-between h-full'>
           <h4
-            className={`${_roboto.className} mb-1 text-xl font-semibold text-slate-800`}
+            className={`${_roboto.className} mb-1 text-xl font-semibold text-slate-800 text-left`}
           >
             {post.title as string}
           </h4>
-          <p className='text-base text-slate-600 mt-4 font-light text-end'>
+          <time className='w-100 text-base text-slate-600 mt-4 font-light text-right'>
             {format(parseISO(post.date as string), 'MMMM dd, yyyy')}
-          </p>
+          </time>
         </div>
       </div>
     </Link>
