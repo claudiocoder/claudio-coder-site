@@ -24,7 +24,7 @@ const PostCard = (post: Blog) => {
           >
             {post.title as string}
           </h4>
-          <time className='w-100 text-base text-slate-600 mt-4 font-light text-right'>
+          <time className='w-full text-base text-slate-600 mt-4 font-light text-right'>
             {format(parseISO(post.date as string), 'MMMM dd, yyyy')}
           </time>
         </div>
