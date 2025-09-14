@@ -3,32 +3,38 @@ import Image from 'next/image'
 import { format, parseISO } from 'date-fns'
 import { _roboto } from '@/lib/utils/fonts'
 import { Blog } from '@/lib/models/Blog'
+import { heightCard, widthCard } from '@/constants'
 
 const PostCard = (post: Blog) => {
   return (
-    <div className='w-[100%] md:w-[80%] lg:w-[60%] shadow-[0_5px_15px_rgba(0,0,0,0.35)] rounded-md flex items-center bg-slate-50 rounded-l-lg max-h-[180px]'>
-      <div className='rounded-l-lg'>
-        <Image
-          width={180}
-          height={150}
-          src={post.thumbnailUrl as string}
-          alt={post.title as string}
-          className='rounded-l-lg'
-        />
-      </div>
-      <div className='flex flex-col items-start justify-between px-3 w-full h-full'>
-        <h2
-          className={`${_roboto.className} my-5 text-base sm:text-xl font-bold w-full text-left`}
-        >
-          <Link href={post.slug as string}>{post.title as string}</Link>
-        </h2>
-        <time
-          dateTime={post.date as string}
-          className='mb-2 block text-xs w-full text-gray-600 text-right'
-        >
-          {format(parseISO(post.date as string), 'MMMM dd, yyyy')}
-        </time>
-      </div>
+    <div className='flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg my-6 w-80 lg:w-96'>
+      <Link
+        href={post.slug as string}
+        aria-label={`Read more about ${post.title}`}
+      >
+        <div className='m-2.5 overflow-hidden rounded-md flex justify-center items-center'>
+          <Image
+            width={widthCard}
+            height={heightCard}
+            src={post.thumbnailUrl as string}
+            className='w-full h-full object-cover'
+            alt={post.title as string}
+          />
+        </div>
+        <div className='p-6 flex flex-col justify-between'>
+          <h4
+            className={`${_roboto.className} mb-1 text-xl font-semibold text-slate-800 text-left`}
+          >
+            {post.title as string}
+          </h4>
+          <time
+            className='w-full text-base text-slate-600 mt-4 font-light text-right'
+            dateTime={post.date as string}
+          >
+            {format(parseISO(post.date as string), 'MMMM dd, yyyy')}
+          </time>
+        </div>
+      </Link>
     </div>
   )
 }
