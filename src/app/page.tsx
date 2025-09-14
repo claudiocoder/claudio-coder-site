@@ -16,7 +16,7 @@ const Home = async () => {
     <>
       <div className='sm:m-8 mx-4 my-2'>
         <h1 className='mb-6 sm:mb-8 text-3xl font-black'>Blog</h1>
-        <div className='flex flex-wrap gap-5 m-auto'>
+        <div className='flex flex-wrap gap-5 justify-center mx-auto lg:justify-start'>
           {posts.map((post, idx) => (
             <PostCard key={idx} {...post} />
           ))}
