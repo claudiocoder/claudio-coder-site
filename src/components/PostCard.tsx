@@ -18,7 +18,7 @@ const PostCard = (post: Blog) => {
             alt={post.title as string}
           />
         </div>
-        <div className='p-6 flex flex-col justify-between h-full'>
+        <div className='p-6 flex flex-col justify-between'>
           <h4
             className={`${_roboto.className} mb-1 text-xl font-semibold text-slate-800 text-left`}
           >
