@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { format, parseISO } from 'date-fns'
 import { _roboto } from '@/lib/utils/fonts'
 import { Blog } from '@/lib/models/Blog'
-import { widthCard } from '@/constants'
+import { heightCard, widthCard } from '@/constants'
 
 const PostCard = (post: Blog) => {
   return (
@@ -12,7 +12,7 @@ const PostCard = (post: Blog) => {
         <div className='m-2.5 overflow-hidden rounded-md flex justify-center items-center'>
           <Image
             width={widthCard}
-            height={widthCard}
+            height={heightCard}
             src={post.thumbnailUrl as string}
             className='w-full h-full object-cover'
             alt={post.title as string}
