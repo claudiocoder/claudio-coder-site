@@ -9,7 +9,7 @@ const PostCard = (post: Blog) => {
   return (
     <Link href={post.slug as string}>
       <div className='flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg my-6 w-80 lg:w-96'>
-        <div className='m-2.5 overflow-hidden rounded-md h-80 flex justify-center items-center'>
+        <div className='m-2.5 overflow-hidden rounded-md flex justify-center items-center'>
           <Image
             width={widthCard}
             height={widthCard}
