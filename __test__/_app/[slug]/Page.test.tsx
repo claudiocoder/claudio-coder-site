@@ -5,7 +5,7 @@ import { render } from '@testing-library/react'
 describe('PageSlug', () => {
   it('Should render', async () => {
     const jsx = await BlogPage({
-      params: { slug: 'resources_developers' },
+      params: Promise.resolve({ slug: 'resources_developers' }),
     })
     const component = render(jsx)
     expect(component).toBeDefined()
