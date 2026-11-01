@@ -3,7 +3,7 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import '@/styles/globals.css'
 import ProfileContainer from '@/components/ProfileContainer'
-import GoogleAnalytics from '@/components/GoogleAnalytics'
+import { Analytics } from '@vercel/analytics/next'
 config.autoAddCss = false
 
 export default function RootLayout({
@@ -24,7 +24,7 @@ export default function RootLayout({
             </div>
           </div>
         </div>
-        <GoogleAnalytics />
+        <Analytics />
       </body>
     </html>
   )
