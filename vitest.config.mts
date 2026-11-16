@@ -29,7 +29,7 @@ export default defineConfig({
         'vitest.config.ts',
         '**/*.config.*',
         'src/utils',
-        '__mocks__',
+        'src/test/**',
         ...coverageConfigDefaults.exclude,
       ],
       thresholds: {
@@ -39,7 +39,7 @@ export default defineConfig({
         statements: 80,
       },
     },
-    setupFiles: ['vitest.setup.ts'],
+    setupFiles: ['src/test/setup.ts'],
     watch: false,
   },
 })
