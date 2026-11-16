@@ -14,6 +14,10 @@ const eslintConfig = defineConfig([
     'out/**',
     'build/**',
     'next-env.d.ts',
+    // Generated test coverage reports:
+    'coverage/**',
+    // Bundled third-party skill scripts are maintained independently.
+    '.agents/skills/impeccable/scripts/**',
   ]),
 ])
 
