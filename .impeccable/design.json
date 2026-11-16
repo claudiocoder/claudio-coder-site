@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-16T21:08:11.231Z",
+  "title": "Design System: Claudio Coder",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "paper",
+        "tonalRamp": [
+          "#26332b",
+          "#425149",
+          "#62746b",
+          "#8a9b90",
+          "#b0bfb3",
+          "#d1dcd1",
+          "#eaf1e4",
+          "#f7f8f2"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "ink",
+        "tonalRamp": [
+          "#10222e",
+          "#183344",
+          "#293f4b",
+          "#526570",
+          "#82949c",
+          "#b1bfc4",
+          "#dce4e5",
+          "#f3f7f7"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "ink-soft",
+        "tonalRamp": [
+          "#10222e",
+          "#183344",
+          "#293f4b",
+          "#526570",
+          "#82949c",
+          "#b1bfc4",
+          "#dce4e5",
+          "#f3f7f7"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "muted",
+        "tonalRamp": [
+          "#10222e",
+          "#183344",
+          "#293f4b",
+          "#526570",
+          "#82949c",
+          "#b1bfc4",
+          "#dce4e5",
+          "#f3f7f7"
+        ]
+      },
+      "deep-blue": {
+        "role": "primary",
+        "displayName": "deep-blue",
+        "tonalRamp": [
+          "#10222e",
+          "#183344",
+          "#293f4b",
+          "#526570",
+          "#82949c",
+          "#b1bfc4",
+          "#dce4e5",
+          "#f3f7f7"
+        ]
+      },
+      "green": {
+        "role": "secondary",
+        "displayName": "green",
+        "tonalRamp": [
+          "#102c25",
+          "#174c38",
+          "#236c45",
+          "#398d50",
+          "#63ad6c",
+          "#95c994",
+          "#c4dfbc",
+          "#edf5e9"
+        ]
+      },
+      "green-link": {
+        "role": "secondary",
+        "displayName": "green-link",
+        "tonalRamp": [
+          "#102c25",
+          "#174c38",
+          "#236c45",
+          "#398d50",
+          "#63ad6c",
+          "#95c994",
+          "#c4dfbc",
+          "#edf5e9"
+        ]
+      },
+      "green-pale": {
+        "role": "neutral",
+        "displayName": "green-pale",
+        "tonalRamp": [
+          "#102c25",
+          "#174c38",
+          "#236c45",
+          "#398d50",
+          "#63ad6c",
+          "#95c994",
+          "#c4dfbc",
+          "#edf5e9"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "border",
+        "tonalRamp": [
+          "#26332b",
+          "#425149",
+          "#62746b",
+          "#8a9b90",
+          "#b0bfb3",
+          "#d1dcd1",
+          "#eaf1e4",
+          "#f7f8f2"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "white",
+        "tonalRamp": [
+          "#26332b",
+          "#425149",
+          "#62746b",
+          "#8a9b90",
+          "#b0bfb3",
+          "#d1dcd1",
+          "#eaf1e4",
+          "#f7f8f2"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "hero": {
+        "displayName": "Hero",
+        "purpose": "Homepage introduction."
+      },
+      "article-title": {
+        "displayName": "Article title",
+        "purpose": "Article page heading."
+      },
+      "body": {
+        "displayName": "Reading body",
+        "purpose": "Long-form article text."
+      },
+      "card-title": {
+        "displayName": "Card title",
+        "purpose": "Article list title."
+      }
+    },
+    "shadows": [
+      {
+        "name": "image-shadow",
+        "value": "0 5px 15px rgba(0,0,0,0.35)",
+        "purpose": "Existing MDX images."
+      }
+    ],
+    "motion": [
+      {
+        "name": "card-image-hover",
+        "value": "transform 300ms",
+        "purpose": "Thumbnail scales on hover; reduced motion disables it."
+      },
+      {
+        "name": "loader-rotation",
+        "value": "rotation 1s linear infinite",
+        "purpose": "Loading indicator; currently no reduced-motion alternative."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "card-stack",
+        "value": "480px"
+      },
+      {
+        "name": "page-stack",
+        "value": "767px"
+      },
+      {
+        "name": "sm",
+        "value": "640px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Post card",
+      "kind": "card",
+      "refersTo": "post-card",
+      "description": "Linked article preview with a cropped image, title, and date.",
+      "html": "<article class=\"ds-card\"><a href=\"#article\"><div class=\"ds-image\"></div><div class=\"ds-body\"><h2>?Cu?ndo usar merge y cuando usar rebase?</h2><time>February 10, 2025</time></div></a></article>",
+      "css": ".ds-card{overflow:hidden;border:1px solid #dbe4dc;border-radius:.75rem;background:#fff;font-family:Roboto,Arial,sans-serif;transition:border-color .2s}.ds-card:hover{border-color:#81b66c}.ds-card a{display:flex;flex-direction:column;color:#172b3a;text-decoration:none}.ds-card a:focus-visible{outline:2px solid #176a50;outline-offset:4px}.ds-image{aspect-ratio:4/3;background:#eaf1e4}.ds-body{display:flex;flex-direction:column;gap:1.25rem;padding:1.5rem}.ds-body h2{margin:0;font-size:1.25rem;line-height:1.375}.ds-body time{color:#475569;font-size:.875rem}"
+    },
+    {
+      "name": "Hero link",
+      "kind": "custom",
+      "refersTo": "hero-link",
+      "description": "Link to the article list.",
+      "html": "<a class=\"ds-hero-link\" href=\"#articles\">Explorar art?culos ?</a>",
+      "css": ".ds-hero-link{display:inline-flex;padding:.9rem 1.15rem;border-radius:.5rem;background:#183344;color:white;font:700 1rem Roboto,Arial,sans-serif;text-decoration:none}.ds-hero-link:hover{background:#2e5360}.ds-hero-link:focus-visible{outline:2px solid #176a50;outline-offset:4px}"
+    },
+    {
+      "name": "Indicador de carga",
+      "kind": "custom",
+      "description": "Doble anillo con la animación actual; no añade un estado de movimiento reducido inexistente.",
+      "html": "<span class=\"ds-loader\"></span>",
+      "css": ".ds-loader{width:48px;height:48px;border:3px solid #1a1a1a;border-radius:50%;display:inline-block;position:relative;box-sizing:border-box;animation:ds-rotation 1s linear infinite}.ds-loader::after{content:\"\";box-sizing:border-box;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;border:3px solid;border-color:#1a1a1a transparent}@keyframes ds-rotation{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Light tech journal",
+    "overview": "A light editorial setting for Claudio's development stories. Warm paper, dark blue ink, and green accents give the blog a technological character; the original hero illustration adds a playful gaming influence. The article column stays calm and readable.",
+    "keyCharacteristics": [
+      "Warm light surfaces, blue-black text, and green accents.",
+      "Roboto for the primary interface and Khula for the profile subtitle.",
+      "A shared masthead and a wide illustrated homepage introduction.",
+      "A responsive article grid alongside a pale author panel.",
+      "A centered, measured article column with prominent headings."
+    ],
+    "rules": [
+      {
+        "name": "The Reading Contrast Rule",
+        "body": "Keep body copy in dark ink on a light surface; reserve brighter green for accents and use the darker green for text links.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "**Do** keep long-form content in a measured, light reading column.",
+      "**Do** use green accents and underlined links to support navigation.",
+      "**Do** preserve native links, visible keyboard focus, and reduced-motion behavior."
+    ],
+    "donts": [
+      "**Don't** treat the historic homepage screenshot as the current layout.",
+      "**Don't** extend the dark code theme into a site-wide dark theme without a design decision.",
+      "**Don't** invent content claims or unsupported component states."
+    ]
+  }
+}

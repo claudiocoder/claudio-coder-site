@@ -58,3 +58,13 @@ Tests are colocated beside source files as `*.test.tsx`, using Vitest + jsdom + 
 Use TypeScript and the existing App Router structure. Keep blog content and user-facing copy in Spanish unless the task specifies otherwise. Follow .prettierrc: two-space indentation, single quotes, no semicolons, and single quotes in JSX.
 
 Install dependencies with `npm ci`. Run checks appropriate to the change: lint and relevant Vitest tests for code changes, build for routing or MDX changes, and coverage when test coverage is affected. Markdown and MDX are excluded by .prettierignore; check changed Markdown explicitly with `npx prettier --check --ignore-path .gitignore AGENTS.md CLAUDE.md`. Do not reformat unrelated files.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+## This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

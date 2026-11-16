@@ -2,7 +2,7 @@ import { _roboto } from '@/lib/utils/fonts'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import '@/styles/globals.css'
-import ProfileContainer from '@/components/ProfileContainer'
+import Link from 'next/link'
 import { Analytics } from '@vercel/analytics/next'
 config.autoAddCss = false
 
@@ -14,16 +14,20 @@ export default function RootLayout({
   return (
     <html lang='es'>
       <body className={_roboto.className}>
-        <div className='my-4 lg:p-5 lg:pl-5 h-screen'>
-          <div className='flex flex-col lg:flex-row column w-full'>
-            <div className='w-full lg:w-1/5 flex justify-center mb-4'>
-              <ProfileContainer />
-            </div>
-            <div className='w-full lg:w-4/5 flex justify-center lg:justify-start'>
-              <div className='w-[100%]'>{children}</div>
-            </div>
+        <header className='site-header'>
+          <div className='site-header-inner'>
+            <Link className='site-brand' href='/'>
+              <span className='brand-mark' aria-hidden='true'>
+                C
+              </span>
+              Claudio Coder
+            </Link>
+            <Link className='header-link' href='/'>
+              Blog
+            </Link>
           </div>
-        </div>
+        </header>
+        <main>{children}</main>
         <Analytics />
       </body>
     </html>
