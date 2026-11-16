@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { notFound } from 'next/navigation'
 import { render, screen } from '@testing-library/react'
-import BlogPage from '../../../src/app/[slug]/page'
+import BlogPage from './page'
 import { getPostBySlug } from '@/lib/mdx'
 
 vi.mock('@/lib/mdx', async importOriginal => ({

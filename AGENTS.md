@@ -7,7 +7,7 @@ This file provides shared guidance for coding agents working in this repository.
 - `npm run dev` / `npm run build` / `npm start` — Next.js (App Router). Use Node.js 24.x only. `.nvmrc` contains `24`; `package.json` and the root package-lock entry declare `24.x`. CI reads `.nvmrc` through `node-version-file`. Keep these settings aligned.
 - `npm run lint` — ESLint (flat config, `eslint.config.mjs`).
 - `npm run format` (check) / `npm run format:fix` — Prettier 3.0.3.
-- `npm test` — Vitest, single run (`watch: false`). Single file: `npx vitest run __test__/_app/Page.test.tsx`; by name: `npx vitest run -t "name"`.
+- `npm test` — Vitest, single run (`watch: false`). Single file: `npx vitest run src/app/page.test.tsx`; by name: `npx vitest run -t "name"`.
 - `npm run test:coverage` — enforces 80% thresholds (lines/branches/functions/statements).
 
 Husky: pre-commit runs `lint-staged` (prettier + eslint --fix); pre-push runs `npm run lint && npm run format`. CI (`.github/workflows/ui.yml`) runs build, lint, format, and coverage on pushes to `main` and PRs to `main`/`develop`.
@@ -51,7 +51,7 @@ Personal Spanish-language blog (Next.js + Tailwind, deployed on Vercel). Posts a
 
 ## Testing notes
 
-Tests are in `__test__/` (mirrors `src/app`), using Vitest + jsdom + Testing Library. Module mocks in `__mocks__/` (`next/font/google`, `next/navigation`, FontAwesome). `@` alias → `src` in both `tsconfig.json` and `vitest.config.mts`. Note `vitest.config.mts` contains a stale `contentlayer/generated` alias (contentlayer is no longer used).
+Tests are colocated beside source files as `*.test.tsx`, using Vitest + jsdom + Testing Library. Shared module mocks live in `src/test/mocks/` (`next/font/google`, `next/navigation`, FontAwesome) and are registered explicitly in `src/test/setup.ts`. Test support files in `src/test/` are excluded from coverage. `@` alias → `src` in both `tsconfig.json` and `vitest.config.mts`. Note `vitest.config.mts` contains a stale `contentlayer/generated` alias (contentlayer is no longer used).
 
 ## Editing and validation
 
