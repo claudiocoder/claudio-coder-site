@@ -7,9 +7,9 @@ describe('Page', () => {
     const jsx = await Home()
     expect(jsx).toBeDefined()
   })
-  it('should render blog title', async () => {
+  it('should render the article section', async () => {
     const jsx = await Home()
     render(jsx)
-    expect(screen.getByText('Blog')).toBeDefined()
+    expect(screen.getByRole('heading', { name: 'Artículos' })).toBeDefined()
   })
 })

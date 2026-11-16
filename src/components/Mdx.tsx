@@ -8,17 +8,14 @@ export const MDXComponents = {
       target='_blank'
       rel='noopener'
       {...props}
-      className={'text-blue-700 text-xl'}
+      className={'article-link'}
     />
   ),
   p: ({ ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <p {...props} className={'text-justify text-lg'} />
+    <p {...props} />
   ),
   blockquote: ({ ...props }: React.HTMLAttributes<HTMLQuoteElement>) => (
-    <blockquote
-      {...props}
-      className={'border-l-4 border-red-400 mt-2 pl-4 italic'}
-    />
+    <blockquote {...props} className={'article-quote'} />
   ),
   img: ({ ...props }) => {
     return (

@@ -23,17 +23,17 @@ const BlogPage = async ({ params }: { params: Promise<BlogPageProps> }) => {
   }
 
   return (
-    <div className='flex flex-col my-8 sm:px-[5%]'>
-      <div className='mx-4'>
-        <div className='sm:pl-[5%] sm:pr-[15%] mb-4 sm:mb-8'>
-          <h1 className='text-2xl sm:text-4xl font-black'>{meta.title}</h1>
-          <time
-            dateTime={meta.date}
-            className='my-2 block text-sm w-full text-gray-600 text-left'
-          >
+    <div className='article-shell'>
+      <div className='article-top'>
+        <Footer />
+      </div>
+      <article className='article-page'>
+        <header className='article-header'>
+          <h1>{meta.title}</h1>
+          <time dateTime={meta.date} className='article-date'>
             {format(parseISO(meta.date), 'MMMM dd, yyyy')}
           </time>
-          <p className='text-gray-500 italic text-sm'>{meta.author}</p>
+          <p className='article-author'>{meta.author}</p>
 
           <div className='my-2'>
             <Link
@@ -44,14 +44,9 @@ const BlogPage = async ({ params }: { params: Promise<BlogPageProps> }) => {
               <span>Compartir en X</span>
             </Link>
           </div>
-        </div>
-        <div className='sm:pl-[5%] sm:pr-[15%] mb-[10%]'>
-          <div>{content}</div>
-        </div>
-      </div>
-      <div className='border-t-2 border-solid py-5 px-4 fixed bg-white w-full bottom-0'>
-        <Footer />
-      </div>
+        </header>
+        <div className='article-content'>{content}</div>
+      </article>
       <SocialMediaScripts />
     </div>
   )

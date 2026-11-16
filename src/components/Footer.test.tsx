@@ -7,8 +7,10 @@ describe('Footer', () => {
     const component = render(<Footer />)
     expect(component).toBeDefined()
   })
-  it('should render regresar label', () => {
+  it('should provide a link back to the blog', () => {
     render(<Footer />)
-    expect(screen.getByText('Regresar')).toBeDefined()
+    expect(
+      screen.getByRole('link', { name: /volver al blog/i }).getAttribute('href')
+    ).toBe('/')
   })
 })
